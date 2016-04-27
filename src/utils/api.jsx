@@ -15,6 +15,6 @@ module.exports = window.api = {
     })
     // .then(function(data){ // to print array of data to console
     //   console.log(data);
-    })
+    // })
   }
 };
