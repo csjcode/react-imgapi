@@ -13,8 +13,5 @@ module.exports = window.api = {
     .then(function(response){
       return response.json()
     })
-    // .then(function(data){ // to print array of data to console
-    //   console.log(data);
-    // })
   }
 };
