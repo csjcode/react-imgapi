@@ -3,6 +3,7 @@ var React = require('react');
 var ImageStore = require('../stores/image-store');
 var Actions = require('../actions');
 var Reflux = require('reflux');
+var ImagePreview = require('./image-preview')
 // var Header = require('./header');
 
 module.exports = React.createClass({
@@ -25,9 +26,14 @@ module.exports = React.createClass({
       // console.log('Topic rendering with ID ' + this.props.params.id);
       // console.log('I have this many images ' + this.state.images.length);
       return <div>
-         // I am a Topic with ID {this.props.params.id}
 
+         {this.renderImages()}
       </div>
+   },
+   renderImages:function () {
+      return this.state.images.slice(0,20).map(function (image) {
+         return <ImagePreview key={image.id} {...image} />;
+      });
    },
    onChange: function(event,images) {
       this.setState({images:images})
